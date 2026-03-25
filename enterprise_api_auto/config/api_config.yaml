@@ -1,0 +1,7 @@
+# 接口路径统一管理，避免用例中硬编码
+user:
+  login: "/api/v1/user/login"        # 用户登录接口
+  info: "/api/v1/user/info"          # 获取用户信息接口
+order:
+  create: "/api/v1/order/create"     # 创建订单接口
+  query: "/api/v1/order/query"       # 查询订单接口
