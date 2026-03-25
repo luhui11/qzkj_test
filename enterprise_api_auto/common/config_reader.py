@@ -2,6 +2,7 @@ import yaml
 import os
 from typing import Dict, Any
 
+
 class ConfigReader:
     """配置文件读取工具类，单例模式避免重复读取"""
     _instance = None
@@ -15,6 +16,7 @@ class ConfigReader:
             cls._instance._load_env_config()
             cls._instance._load_api_config()
         return cls._instance
+
 
     def _load_env_config(self) -> None:
         """读取环境配置文件"""
