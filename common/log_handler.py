@@ -3,6 +3,7 @@ import os
 from datetime import datetime
 from common.config_reader import ConfigReader
 
+
 class LogHandler:
     """日志处理工具类，统一日志格式和存储"""
     _logger = None
@@ -41,6 +42,7 @@ class LogHandler:
             cls._logger.addHandler(console_handler)
 
         return cls._logger
+
 
 # 全局日志实例，便于其他模块直接调用
 logger = LogHandler.get_logger()

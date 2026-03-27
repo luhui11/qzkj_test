@@ -1,6 +1,7 @@
 import json
 from typing import Dict, Any, Optional
-from log_handler import logger
+from common.log_handler import logger
+
 
 class AssertTool:
     """自定义断言工具类，封装常用断言场景，提供详细日志"""
