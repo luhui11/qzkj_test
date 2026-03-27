@@ -20,7 +20,7 @@ class ConfigReader:
     def _load_env_config(self) -> None:
         """读取环境配置文件"""
         # ✅ 修复：在函数内部导入 logger
-        from log_handler import logger
+        from common.log_handler import logger
 
         env_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config", "env.yaml")
         try:
@@ -39,7 +39,7 @@ class ConfigReader:
     def _load_api_config(self) -> None:
         """读取接口配置文件"""
         # ✅ 修复：在函数内部导入 logger
-        from log_handler import logger
+        from common.log_handler import logger
 
         api_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "config", "api_config.yaml")
         try:
@@ -58,7 +58,7 @@ class ConfigReader:
         如果 env 为 None，自动使用 active_env
         """
         # ✅ 修复：在函数内部导入 logger
-        from log_handler import logger
+        from common.log_handler import logger
 
         # 1. 确定要使用的环境名
         if env is None:
@@ -89,7 +89,7 @@ class ConfigReader:
     def get_api_path(self, api_key: str) -> str:
         """获取接口路径，支持多级 key，格式："user.login" """
         # ✅ 修复：在函数内部导入 logger (如果需要记录错误日志)
-        from log_handler import logger
+        from common.log_handler import logger
 
         keys = api_key.split(".")
         config = self._api_config

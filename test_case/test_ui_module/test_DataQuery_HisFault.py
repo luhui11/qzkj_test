@@ -4,8 +4,10 @@ import sys
 from playwright.sync_api import sync_playwright, expect
 
 # --- 引入现有框架组件 ---
-# 假设项目根目录已加入 sys.path，或者通过相对导入
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# 将项目根目录加入 sys.path，确保可导入 common 等顶级包
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
 from common.data_reader import DataReader  # 对应你的 data_reader.py
 from common.mysql_connect import DatabasePool  # 对应你的 mysql_connect.py
