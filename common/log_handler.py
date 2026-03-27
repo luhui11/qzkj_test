@@ -1,7 +1,6 @@
 import logging
 import os
 from datetime import datetime
-from common.config_reader import ConfigReader
 
 
 class LogHandler:
